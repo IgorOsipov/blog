@@ -8,6 +8,8 @@ async function getData() {
     },
   });
 
+  if (!res.ok) throw new Error("Server error");
+
   return res.json();
 }
 
