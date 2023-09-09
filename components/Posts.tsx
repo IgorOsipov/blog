@@ -21,9 +21,9 @@ const Posts = () => {
   return loading ? (
     <h1>Loading</h1>
   ) : (
-    <ul className="mt-2">
+    <ul className="mt-8 list-disc pl-5">
       {posts.map((post: any) => (
-        <li className="underline" key={post.id}>
+        <li className="underline mb-2" key={post.id}>
           <Link href={`blog/${post.id}`}>{post.title}</Link>
         </li>
       ))}
