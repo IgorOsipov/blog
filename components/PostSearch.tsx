@@ -1,14 +1,17 @@
 "use client";
-
-import { usePosts } from "@/store";
+import useSWR from "swr";
 import { FormEventHandler, useState } from "react";
+import { getPostsBySearch } from "@/api/getPosts";
+//import { usePosts } from "@/store";
 
 const PostSearch = () => {
+  const { mutate } = useSWR("posts");
   const [search, setSearch] = useState("");
-  const getPostsBySearch = usePosts((state) => state.getPostsBySearch);
+  //const getPostsBySearch = usePosts((state) => state.getPostsBySearch);
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (event) => {
     event.preventDefault();
-    await getPostsBySearch(search);
+    const filteredPosts = await getPostsBySearch(search);
+    mutate(filteredPosts);
   };
   return (
     <form onSubmit={handleSubmit} className="flex mt-3">
