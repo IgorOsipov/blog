@@ -1,7 +1,7 @@
 "use client";
 import useSWR from "swr";
 import { FormEventHandler, useState } from "react";
-import { getPostsBySearch } from "@/api/getPosts";
+import { getPostsBySearch } from "@/services/getPosts";
 //import { usePosts } from "@/store";
 
 const PostSearch = () => {

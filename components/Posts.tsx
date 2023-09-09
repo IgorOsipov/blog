@@ -4,7 +4,7 @@
 // import { useEffect } from "react";
 import Link from "next/link";
 import useSWR from "swr";
-import { getAllPosts } from "@/api/getPosts";
+import { getAllPosts } from "@/services/getPosts";
 
 const Posts = () => {
   //   const [posts, loading, getAllPosts] = usePosts(

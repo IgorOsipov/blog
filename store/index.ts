@@ -1,4 +1,4 @@
-import { getAllPosts, getPostsBySearch } from "@/api/getPosts";
+import { getAllPosts, getPostsBySearch } from "@/services/getPosts";
 import { create } from "zustand";
 
 type UsePost = {
