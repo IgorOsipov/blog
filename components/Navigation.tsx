@@ -15,7 +15,7 @@ const Navigation = ({ navLinks }: Props) => {
   const pathname = usePathname();
   return (
     <nav className="border-b-2 bg-slate-50 h-10 shadow-sm shadow-slate-300">
-      <div className="container mx-auto flex items-center h-full">
+      <div className="container mx-auto flex justify-center items-center h-full">
         {navLinks.map((link, index) => {
           const isActive = pathname === link.href;
           return (
@@ -23,8 +23,8 @@ const Navigation = ({ navLinks }: Props) => {
               key={index}
               className={
                 isActive
-                  ? "active mr-2 font-bold text-slate-600"
-                  : "mr-2 font-bold text-slate-400 hover:text-slate-600 hover:underline"
+                  ? "pr-3 pl-3 font-bold text-slate-600"
+                  : "pr-3 pl-3 font-bold text-slate-400 hover:text-slate-600 hover:underline"
               }
               href={link.href}
             >
