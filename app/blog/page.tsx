@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   title: "Blog | My Blog",
 };
 
+export const revalidate = 10;
+
 const Blog = async () => {
   return (
     <>
