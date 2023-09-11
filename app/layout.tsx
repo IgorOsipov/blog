@@ -30,7 +30,7 @@ export default function RootLayout({
           >
             <Header />
             <main className="py-3 overflow-x-auto">
-              <div className="container mx-auto px-5">{children}</div>
+              <div className="container mx-auto px-5 h-full">{children}</div>
             </main>
             <Footer />
           </div>

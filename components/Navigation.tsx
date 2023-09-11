@@ -57,9 +57,9 @@ const Navigation = ({ navLinks }: Props) => {
           </Link>
         ) : (
           <Link
-            href="api/auth/signin"
+            href="/signin"
             className={
-              pathname === "api/auth/signin"
+              pathname === "/signin"
                 ? "pr-3 pl-3 font-bold text-slate-600"
                 : "pr-3 pl-3 font-bold text-slate-400 hover:text-slate-600 hover:underline"
             }
