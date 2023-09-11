@@ -1,4 +1,5 @@
 "use client";
+import { useSession, signIn, signOut } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -13,6 +14,8 @@ type Props = {
 
 const Navigation = ({ navLinks }: Props) => {
   const pathname = usePathname();
+  const session = useSession();
+
   return (
     <nav className="border-b-2 bg-slate-50 h-10 shadow-sm shadow-slate-300">
       <div className="container mx-auto flex justify-center items-center h-full">
@@ -32,6 +35,38 @@ const Navigation = ({ navLinks }: Props) => {
             </Link>
           );
         })}
+        {session?.data && (
+          <Link
+            href="/profile"
+            className={
+              pathname === "/profile"
+                ? "pr-3 pl-3 font-bold text-slate-600"
+                : "pr-3 pl-3 font-bold text-slate-400 hover:text-slate-600 hover:underline"
+            }
+          >
+            Profile
+          </Link>
+        )}
+        {session?.data ? (
+          <Link
+            href="#"
+            className="pr-3 pl-3 font-bold text-slate-400 hover:text-slate-600 hover:underline"
+            onClick={() => signOut({ callbackUrl: "/" })}
+          >
+            Sign Out
+          </Link>
+        ) : (
+          <Link
+            href="api/auth/signin"
+            className={
+              pathname === "api/auth/signin"
+                ? "pr-3 pl-3 font-bold text-slate-600"
+                : "pr-3 pl-3 font-bold text-slate-400 hover:text-slate-600 hover:underline"
+            }
+          >
+            Sign In
+          </Link>
+        )}
       </div>
     </nav>
   );

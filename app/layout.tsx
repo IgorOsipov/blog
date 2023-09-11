@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { Header } from "@/components/Header";
+import { Providers } from "@/components/Providers";
 
 const mainFont = Roboto({
   weight: ["300", "400", "700", "900"],
@@ -22,9 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={mainFont.className}>
-        <Header />
-        <main className="container mx-auto mt-4">{children}</main>
-        <Footer />
+        <Providers>
+          <Header />
+          <main className="container mx-auto mt-4">{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
