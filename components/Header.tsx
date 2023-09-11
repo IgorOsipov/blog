@@ -17,7 +17,7 @@ const navItems = [
 
 const Header = () => {
   return (
-    <header>
+    <header className="col-span-1">
       <Navigation navLinks={navItems} />
     </header>
   );

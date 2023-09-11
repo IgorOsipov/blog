@@ -17,7 +17,7 @@ const Navigation = ({ navLinks }: Props) => {
   const session = useSession();
 
   return (
-    <nav className="border-b-2 bg-slate-50 h-10 shadow-sm shadow-slate-300">
+    <nav className="border-b-2 h-full bg-slate-50 shadow-sm shadow-slate-300">
       <div className="container mx-auto flex justify-center items-center h-full">
         {navLinks.map((link, index) => {
           const isActive = pathname === link.href;

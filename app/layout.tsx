@@ -24,9 +24,16 @@ export default function RootLayout({
     <html lang="en">
       <body className={mainFont.className}>
         <Providers>
-          <Header />
-          <main className="container mx-auto mt-4">{children}</main>
-          <Footer />
+          <div
+            className="grid"
+            style={{ gridTemplateRows: "1fr 20fr 1fr", height: "100vh" }}
+          >
+            <Header />
+            <main className="py-3 overflow-x-auto">
+              <div className="container mx-auto px-5">{children}</div>
+            </main>
+            <Footer />
+          </div>
         </Providers>
       </body>
     </html>

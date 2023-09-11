@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <footer className="fixed bottom-0 left-0">
-      <p className="container mx-auto">Created by &copy; IO</p>
+    <footer className="border-t-2 h-full bg-slate-50 shadow-sm shadow-slate-300 flex items-center">
+      <p className="container text-center mx-auto">Created by &copy; IO</p>
     </footer>
   );
 };
